@@ -13,12 +13,24 @@
 <![endif]>
     <link href="morgan.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<nav class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item">
+    	  <a href="#b" class="pure-menu-link">How it Works</a></li>
+        <li class="pure-menu-item">
+          <a href="#c" class="pure-menu-link">Exigency</a></li>
+        <li class="pure-menu-item">
+          <a href="#d" class="pure-menu-link">Trends</a></li>
+        <li class="pure-menu-item">
+          <a href="#e" class="pure-menu-link">Discourse</a></li>
+    </ul>
+</nav>
   </head>
   <body>
     <h1>Overview</h1>
         <p>The <'canvas'> element creates a rectangle space on a web page for a developer to manipulate JavaScript to draw graphs and animations as well as handle photo compositions and video processing.</p>
 	<canvas id="a" width="300" height="225" style="border:1px solid #000"></canvas>
-    <h1>How It Works</h1>
+    <h1 id="b">How It Works</h1>
         <p>The element itself is easy to form in an HTML document. The only code needed to build a canvas is a call for the element and settings for the width and height. To demonstrate, "<'canvas width="300" height="225"'><'/canvas>" will build a 300x225 pixel canvas. Once formed, a developer calls the canvas from the Document Object Model (DOM) with code like this:</p>
 
 <p>/function draw_b(){<br>
@@ -26,7 +38,7 @@
  var b_context = b_canvas.getContext("2d");}</p>
 
 <p>This code grabs a canvas with an id=b and defines it as a 2D plane. This creates the canvas's drawing context, where the drawing methods and properties used for the canvas itself are defined. Now, JavaScript bits and even CSS properties like fileStyle can manipulate the canvas.</p>
-    <h1>Prompting Exigency</h1>
+    <h1  id="c">Prompting Exigency</h1>
         <p>The story of <'canvas'>'s development begins in 2004, with Apple developing the tag for use with their own Safari browser and OSX WebKit component to operate Dashboard items. According to WHATWG specification writer Ian Hickson, Apple developed and introduced <'canvas'> to the Web <a href="http://ln.hixie.ch/?start=1089635050&count=1">without going through any sort of standardization first (not even unofficial standardization like the WHATWG)..."</a>, though WHATWG eventually did standardize the element. The managing editor of sitepoint.com, Adam Roberts, <a href="http://www.sitepoint.com/web-foundations/introduction-html5-canvas-element/">describes a situation that <'canvas'> responds to:</a>
 <br>
 <p>"With HTML5’s Canvas API, we’re no longer limited to drawing rectangles on our sites. We can draw anything we can imagine, all through JavaScript. This can improve the performance of our websites by avoiding the need to download images off the network. With canvas, we can draw shapes and lines, arcs and text, gradients and patterns. In addition, canvas gives us the power to manipulate pixels in images and even video."</p>
@@ -35,7 +47,7 @@
         <p>The <'canvas'> element actually can be used to create video games to be played in a web browser. JavaScript code is used to build the game elements, such as a player character, an image background and game rules such as win conditions and collision detection, which display to the player through the canvas. As one could imagine, browser games built in <'canvas'> are quite the different experience compared to more traditional video games played on a PC or dedicated game consoles.</p>
 
   <article>
-    <h1>Trends & Practices</h1>
+    <h1 id="d">Trends & Practices</h1>
       <div class="pure-g">
         <div class="pure-u-1-3" style="border:1px solid #000">
             <h2>Practice 1: How do browser-based game developers use <'canvas'> to render the visuals and course design of a level for a platform-genre game? How are developers in this scene similar and different? How connected to the developer working in <'canvas'> is a "best practice"?</h2>
@@ -46,7 +58,7 @@
       </div>     
     </article>
     <article>
-        <h1>Discourse on <'canvas'> & Gaming</h1>
+        <h1  id="e">Discourse on <'canvas'> & Gaming</h1>
       <div class="pure-g">
         <div class="pure-u-1-3" style="border:1px solid #000"><h2>Game Developers, in <'canvas'></h2>
 <p>As relatively new as <'canvas'> is among web technologies, using it for game development is an even newer idea still. I would suspect that game developers are not quite prominent figures in the discourse surrounding how <'canvas'> works, and that their concerns and desires are not considered as heavily. Conversations saved in the W3C mailing-lists seems to confirm my theory. When the features that favor games are even brought up, developers favor them less to ensure other facets of the HTML work. <a href="http://lists.w3.org/Archives/Public/public-whatwg-archive/2012Sep/0032.html">Quoted from a discussion on GPU acceleration in <'canvas'>:</a>
