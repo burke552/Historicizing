@@ -2,7 +2,10 @@
 <html="en">
   <head>
     <Title>Why are you looking here? Everything important is down there!</title>
-        <h1>A Blank <'canvas'> to Play With: A Historically-Grounded Examination of the <'canvas'> Element</h1>
+        <header>
+          <h1>A Blank <'canvas'> to Play With: A Historically-Grounded Examination of the <'canvas'> Element<br>
+          <br>By: Andrew Burke</h1>
+        </header>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <!if lte IE 8]>
@@ -14,63 +17,42 @@
     <link href="morgan.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <nav class="pure-menu pure-menu-horizontal">
-    <ul class="pure-menu-list">
-        <li class="pure-menu-item">
-    	  <a href="#b" class="pure-menu-link">How it Works</a></li>
-        <li class="pure-menu-item">
-          <a href="#c" class="pure-menu-link">Exigency</a></li>
-        <li class="pure-menu-item">
-          <a href="#d" class="pure-menu-link">Trends</a></li>
-        <li class="pure-menu-item">
-          <a href="#e" class="pure-menu-link">Discourse</a></li>
-    </ul>
+    	    <a href="#b" class="pure-button">Practices</a>
+          <a href="#c" class="pure-button">Summary</a>
+          <a href="#d" class="pure-button">Conclusion</a>
+          <a href="#e" class="pure-button">Works Cited</a>
 </nav>
   </head>
   <body>
     <h1>Overview</h1>
-        <p>The <'canvas'> element creates a rectangle space on a web page for a developer to manipulate JavaScript to draw graphs and animations as well as handle photo compositions and video processing.</p>
+        <p>The <'canvas'> element creates a rectangle space on a web page for a developer to manipulate JavaScript to draw graphs and animations as well as handle photo compositions and video processing. The element itself is easy to form in an HTML document. The only code needed to build a canvas is a call for the element and settings for the width and height. Once formed, a developer calls the canvas from the Document Object Model (DOM). This creates the canvas's drawing context, where the drawing methods and properties used for the canvas itself are defined. Now, JavaScript code and even CSS properties like fileStyle can manipulate the canvas.</p>
 	<canvas id="a" width="300" height="225" style="border:1px solid #000"></canvas>
-    <h1 id="b">How It Works</h1>
-        <p>The element itself is easy to form in an HTML document. The only code needed to build a canvas is a call for the element and settings for the width and height. To demonstrate, "<'canvas width="300" height="225"'><'/canvas>" will build a 300x225 pixel canvas. Once formed, a developer calls the canvas from the Document Object Model (DOM) with code like this:</p>
-
-<p>/function draw_b(){<br>
- var b_canvas = document.getElementById("b");<br> 
- var b_context = b_canvas.getContext("2d");}</p>
-
-<p>This code grabs a canvas with an id=b and defines it as a 2D plane. This creates the canvas's drawing context, where the drawing methods and properties used for the canvas itself are defined. Now, JavaScript bits and even CSS properties like fileStyle can manipulate the canvas.</p>
-    <h1  id="c">Prompting Exigency</h1>
-        <p>The story of <'canvas'>'s development begins in 2004, with Apple developing the tag for use with their own Safari browser and OSX WebKit component to operate Dashboard items. According to WHATWG specification writer Ian Hickson, Apple developed and introduced <'canvas'> to the Web <a href="http://ln.hixie.ch/?start=1089635050&count=1">without going through any sort of standardization first (not even unofficial standardization like the WHATWG)..."</a>, though WHATWG eventually did standardize the element. The managing editor of sitepoint.com, Adam Roberts, <a href="http://www.sitepoint.com/web-foundations/introduction-html5-canvas-element/">describes a situation that <'canvas'> responds to:</a>
-<br>
-<p>"With HTML5’s Canvas API, we’re no longer limited to drawing rectangles on our sites. We can draw anything we can imagine, all through JavaScript. This can improve the performance of our websites by avoiding the need to download images off the network. With canvas, we can draw shapes and lines, arcs and text, gradients and patterns. In addition, canvas gives us the power to manipulate pixels in images and even video."</p>
-<p>By bringing JavaScript into the picture, <'canvas'> greatly expanded what kinds of graphics web developers could use for their pages.</p>
-    <h1><'canvas'> & Games</h1>
-        <p>The <'canvas'> element actually can be used to create video games to be played in a web browser. JavaScript code is used to build the game elements, such as a player character, an image background and game rules such as win conditions and collision detection, which display to the player through the canvas. As one could imagine, browser games built in <'canvas'> are quite the different experience compared to more traditional video games played on a PC or dedicated game consoles.</p>
+    <h1>Abstract</h1>
+      <p>The story of <'canvas'>'s development begins in 2004, with Apple developing the tag for use with their own Safari browser and OSX WebKit component to operate Dashboard items. According to WHATWG specification writer Ian Hickson, Apple developed and introduced <'canvas'> to the Web without going through any sort of standardization first (not even unofficial standardization like the WHATWG)...", though WHATWG eventually did standardize the element. By bringing in JavaScript, <'canvas'> greatly expanded what kinds of graphics web developers could use for their pages. Yet, even before <’canvas’>, web developers have already been building graphics features into websites. Web developers at Apple built this element as a way to streamline and facilitate this work already being done.<br><br>
+The <'canvas'> element actually can be used to create video games to be played in a web browser. JavaScript code is used to build the game elements, such as a player character, an image background and game rules such as win conditions and collision detection, which display to the player through the canvas. As one could imagine, browser games built in <'canvas'> are quite the different experience compared to more traditional video games played on a PC or a dedicated game console. <’canvas’>-based browser games are normally the domain of smaller, independent “indie” publishers in today’s video game scene.<br><br>
+As relatively new as <’canvas’> is among web technologies, using it for game development is an even newer idea still. Game developers who would use <’canvas’> to do their work have only recently joined in the conversation about the element’s development, and because of this they don’t have much power in how <’canvas’> will continue to develop. Discussions saved on the W3C mailing-lists support this observation, with features that function fine for web development and other web work being preferred by the well-established web developers, even if those features interfere with video game functionality.<br><br>
+Yet, therein lies the great thing about <’canvas’>; game developers and gamers are now a part of the web development scene. Thanks to the capabilities of <’canvas’>, a group that was external to web development in the past has now been invited to join in, to have an influence on its present form and a stake in its future. In addition, game developers bring new ideals and practices on how web development work should be done, which will take <’canvas’>’s development in a new direction, perhaps different from its original intent, yet just as important and valuable for the element’s history and context.<br><br>
+The scenario surrounding <’canvas’> serves as a demonstration of a larger phenomenon; HTML as a whole has changed based on the people and groups that have entered the web development scene, who have brought their own ideas of how it should be into the discussion and have done the work to implement them.</p>
 
   <article>
-    <h1 id="d">Trends & Practices</h1>
+    <h1 id="b">Trends & Practices</h1>
       <div class="pure-g">
-        <div class="pure-u-1-3" style="border:1px solid #000">
-            <h2>Practice 1: How do browser-based game developers use <'canvas'> to render the visuals and course design of a level for a platform-genre game? How are developers in this scene similar and different? How connected to the developer working in <'canvas'> is a "best practice"?</h2>
+        <div class="pure-u-1-3">
+            <h2>Practice 1:</h2>
                 <p>I'd say something witty here, but I'm waiting for the final version!</p></div>
-	<div class="pure-u-1-3" style="border:1px solid #000">
-            <h2>Practice 2: What philosophies do browser-based game developers carry on how to design a "good" platformer level in <'canvas'> and how do these compare with older video game practices, i.e. Nintendo with Super Mario Bros., that did not use <'canvas'>?</h2>
+	<div class="pure-u-1-3">
+            <h2>Practice 2:</h2>
                 <p><a href="http://www.eurogamer.net/articles/2015-09-07-video-miyamoto-on-how-nintendo-made-marios-most-iconic-level">This link here</a> shares some of Miyamoto's insights from when he designed the first level of <i>Super Mario Bros.</i></p></div>
-      </div>     
+                <div class="pure-u-1-3">
+                    <h2>Practice 3:</h2>
+                        <p>I'd say something witty here, but I'm waiting for the final version!</p></div>
+      </div>
     </article>
-    <article>
-        <h1  id="e">Discourse on <'canvas'> & Gaming</h1>
-      <div class="pure-g">
-        <div class="pure-u-1-3" style="border:1px solid #000"><h2>Game Developers, in <'canvas'></h2>
-<p>As relatively new as <'canvas'> is among web technologies, using it for game development is an even newer idea still. I would suspect that game developers are not quite prominent figures in the discourse surrounding how <'canvas'> works, and that their concerns and desires are not considered as heavily. Conversations saved in the W3C mailing-lists seems to confirm my theory. When the features that favor games are even brought up, developers favor them less to ensure other facets of the HTML work. <a href="http://lists.w3.org/Archives/Public/public-whatwg-archive/2012Sep/0032.html">Quoted from a discussion on GPU acceleration in <'canvas'>:</a>
-<p>"It seems to me that one way or another we have to break something. Canvases drawn into once with no animation loop may go blank with GL-based hardware acceleration, whereas most video games will not function properly without it. I much prefer the former to the latter."</p>
-<p>"No, we can't break the current implementation. It's perfectly reasonable for an author to draw into a canvas once and expect that the browser will manage it properly."</p></div>
-        <div class="pure-u-1-3" style="border:1px solid #000"><h2>Browser Games, in general gaming</h2>
-<p>Games developed for the web are relative newcomers in the gaming realm, having only gained a foothold aided by <'canvas'> in the mid-2000's while industry giants like Nintendo and Sony have been operating with dedicated consoles for decades already. The majority of discourse in gaming revolves around these few big names, with "indie" developers off to the side.</p>
-
-<p>Still, it seems to me that browser games have grown very quickly in terms of what they are capable of, and have a few advantages to tout over more traditional forms of gaming. While not developed with <'canvas'>, the browser game <i>Pokémon Showdown!</i> uses JavaScript to faithfully recreate the battle gameplay of the <i>Pokémon</i> games, while adding a ladder-based random matchmaking system that lets a player battle with other players on the site. Feats like this show that browser games are capable of matching up to even the most popular console titles of today.</p>
-
-<p>Geoff Blair, co-founder of web-based game company Lost Decade Games, describes ease of access as an advantage for web-based games; <a href="https://www.youtube.com/watch?v=QThg49A3qqI">"People can just play your game right away..."</a> as opposed to needing to purchase a physical copy from a retail vendor that requires the proper game console to play it. Yet, being a web-based independent game company in the current gaming realm has struggles as well, and perhaps a reason why newer web-based developers aren't in the main spotlight; Blair states that smaller companies "have to bring a lot of their own traffic" because they aren't already in the public eye, and that "just having a game that plays in a web browser is not enough to build a product on." HTML5 and <'canvas'> make it easier than ever to develop a game and distribute it to others, but one small game will have difficulty standing out amongst multitudes of browser games like it, let alone the biggest releases from a company like Nintendo.</p></div>
-      </div>     
-    </article>
+    <h1 id="c">Summary: A Connection to Older Video Game Forms</h1>
+        <p></p>
+    <h1 id="d">Conclusion</h1>
+        <p></p>
+    <h1 id="e">Works Cited</h1>
+        <p></p>
   </body>
 </html>
