@@ -30,6 +30,10 @@ nav{
     border:1px solid #000;
 }
 
+a.pure-button{
+      font-size: 12px;
+    width: 17%;
+}
 
 h2 {
   font-family: Arial;
