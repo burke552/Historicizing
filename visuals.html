@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html="en">
+  <head>
+    <Title>Why are you looking here? Everything important is down there!</title>
+        <header>
+          <h1>A Blank <'canvas'> to Play With: A Historically-Grounded Examination of the <'canvas'> Element<br>
+          </h1>
+        </header>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <!if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+    <![endif]>
+    <![if gt IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+<![endif]>
+    <link href="morgan.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h1>Visuals</h1>
+    <p>An important step in creating a good video game, whether web-based or traditional, is to create a graphic presentation that is effective and pleasing to the player’s eye. This includes the background, the player character and other entities the player character interacts with, such as enemies, platforms and terrain. Good graphics are highly valued in today’s gaming scene, and for some players a poor visual presentation can make or break a game.
+      <br><br>Before doing my research on what constitutes a best practice for visuals in web browser games, I wasn’t knowledgeable on how <’canvas’> and JavaScript code are written and implemented in a game. With this lack of perspective on the literal writing of a game, the practices I imagined I would find pertained to how a game developer would manage their game’s visuals after they’ve done the code-writing. To illustrate, this would be practices such as “keep the art style consistent for the characters and levels” or “keep the background designs simple, don’t create a background that’s too complex and distracting.”
+      <br><br>What I found a lot more of were practices that related to actually writing the <’canvas’> and the JavaScript that facilitates the visuals. Here’s a short list of these kinds of practices:</p>
+      <ul>
+        <li>Write multiple <’canvas’> elements for each group of visuals. (background, player, enemies, etc) This lets the developer update each set of entities separately as they need to instead of rendering and updating everything at once.</li>
+        <li>Keep all of the games images / sprites on a single sprite sheet. This way, the code only needs to reference one document and location for all of its images.</li>
+        <li>Use a loop to continually update and render the canvas. This enables animations and other updates to the visuals as interactions between game elements change.</li>
+      </ul>
+      <p>I found the practice of using multiple canvases noteworthy because the source I found that detailed this practice wrote that it is helpful for multimedia apps as well as games. The fact that this technique is a best practice for two different uses of the <’canvas’> element shows how game developers are drawing from the preexisting work of web developers as they do their own work in <’canvas’>.</p>
+      <p>Click <a href="index.html#c">here</a> to return to the home page.</p>
+  </body>
+</html>
