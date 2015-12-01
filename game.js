@@ -4,12 +4,17 @@
 })();
 
 var canvas = document.getElementById("a");
-    ctx = canvas.getContext("2d");
+  var ctx = canvas.getContext("2d");
 
-    var images = new function(){
-      this.background = new Image();
-      this.background.src = "background.jpg";
-    }
+    var bgReady = false;
+    var bgImage = new Image();
+    bgImage.onload = function (){
+      bgReady = true;};
+      bgImage.src = "background.jpg";
+      var render = function(){
+        if(bgReady){
+          ctx.drawImage(bgImage, 0, 0);}
+      }
 
     width = 640;
     height = 480;
