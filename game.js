@@ -5,10 +5,14 @@
 
 var canvas = document.getElementById("a");
     ctx = canvas.getContext("2d");
+
+    var images = new function(){
+      this.background = new Image();
+      this.background.src = "background.jpg";
+    }
+
     width = 640;
     height = 480;
-
-
     player = {
       x : 35,
       y : height - 15,
@@ -20,36 +24,34 @@ var canvas = document.getElementById("a");
       jumping: false,
       doubleJump: false},
     keys = [],
-    friction = 0.88,
-    gravity = 0.19;
+    friction = 0.78,
+    gravity = 0.32;
 
 canvas.width = width;
 canvas.height = height;
 
 function update(){
   // check keys
-    if (keys[38] || keys[32]) {
+    if (keys[38]) {
         // up arrow or space
       if(!player.jumping){
        player.jumping = true;
-       player.velY = -player.speed*1.33;
-      if(player.jumping && !player.doubleJump){
-          player.doubleJump = true;
-          player.velY = -player.speed*1.02;}}
-    }
+       player.velY = -player.speed*1.33;}}
 
+       if (player.jumping && !player.doubleJump){
+        if (keys[32]) {
+          player.doubleJump = true;
+          player.velY = -player.speed*1.17;}}
 
     if (keys[39]) {
         // right arrow
         if (player.velX < player.speed) {
-            player.velX++;
-        }
+            player.velX++;}
     }
     if (keys[37]) {
         // left arrow
         if (player.velX > -player.speed) {
-            player.velX--;
-        }
+            player.velX--;}
     }
 
     player.velX *= friction;
@@ -67,9 +69,10 @@ function update(){
 
     if(player.y >= height-player.height){
         player.y = height - player.height;
-        player.jumping = false;
-        player.doubleJump = false;
-    } else if (player.y <= 0) {
+        if (!keys[38]){
+            player.jumping = false;
+        player.doubleJump = false;}}
+    else if (player.y <= 0) {
         player.y = 0;
     }
     ctx.clearRect(0,0,width,height);
@@ -86,7 +89,6 @@ document.body.addEventListener("keydown", function(e) {
 document.body.addEventListener("keyup", function(e) {
     keys[e.keyCode] = false;
 });
-
 
 window.addEventListener("load",function(){
     update();
