@@ -3,21 +3,15 @@
     window.requestAnimationFrame = requestAnimationFrame;
 })();
 
-var canvas = document.getElementById("a"),
-    ctx = canvas.getContext("2d"),
-    width = 640,
-    height = 480
+var canvas = document.getElementById("a");
+    ctx = canvas.getContext("2d");
+    width = 640;
+    height = 480;
 
-    var background = new Image();
-    background.src = "background.jpg";
-
-    background.onload = function(){
-      ctx.drawImage(background,0,0);
-    }
 
     player = {
       x : 35,
-      y : height - 5,
+      y : height - 15,
       width : 14,
       height : 15,
       speed: 7,
@@ -26,7 +20,7 @@ var canvas = document.getElementById("a"),
       jumping: false,
       doubleJump: false},
     keys = [],
-    friction = 0.8,
+    friction = 0.88,
     gravity = 0.19;
 
 canvas.width = width;
