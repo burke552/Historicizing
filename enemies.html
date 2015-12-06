@@ -3,8 +3,8 @@
   <head>
     <Title>Why are you looking here? Everything important is down there!</title>
         <header>
-          <h1>A Blank <'canvas'> to Play With: A Historically-Grounded Examination of the <'canvas'> Element<br>
-          <br>By: Andrew Burke</h1>
+          <h1>A Blank &lt;canvas&gt; to Play With: A Historically-Grounded Examination of the &lt;canvas&gt; Element
+</h1>
         </header>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
@@ -16,15 +16,15 @@
 <![endif]>
     <link href="morgan.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<nav class="pure-menu pure-menu-horizontal">
-      	  <a href="#b" class="pure-button">Abstract</a>
-    	    <a href="#c" class="pure-button">Practices</a>
-          <a href="#d" class="pure-button">Summary</a>
-          <a href="#e" class="pure-button">Conclusion</a>
-          <a href="#e" class="pure-button">Works Cited</a>
 </nav>
   </head>
   <body>
-    <h1>Visuals</h1>
-  </body>
+    <h1>Enemies</h1>
+    <p>In platform games, enemies are antagonistic characters controlled by code patterns or artificial intelligence that exist to impede the player’s progress. They accomplish this in a few different ways. They may be simple pawns for the player to pummel on their way to the end of the level, a very threatening presence that must be removed to proceed or even the key to solving puzzles. They can serve as distractions to complicate difficult jumps or resources needed to defeat other enemies. Usually, enemies are the primary obstacles the player interacts with as he or she progresses through a level, occupying the terrain the player needs to traverse.
+<br><br>Once again, my perspective as a gamer and not a game developer informs the practices I thought should be applied to designing enemies in platform games. When I think of enemy design, I think of practices like “only have a few enemies on screen at a time” and “don’t make the more difficult enemies just faster or stronger clones of basic enemies.” I also find the actual appearance of the enemies to be important; having multiple enemy types that are just recolored versions of one another isn’t interesting.
+<br><br>However, over the course of working on this project I feel that I have a slightly better understanding of how to write game elements in code. Thinking about the kinds of code writing practices I would expect to see, I’d expect that the same code and variables that determine the player’s position on the canvas and how they move also works to position an enemy. Also, I’d expect that a best practice for writing the collision detection of an enemy would be to write separate code methods for different types of collisions. (For instance, running into an enemy from the side hurts the player but falling onto the enemy from above defeats the enemy.)
+<br><br>Some of the code writing practices I expected to see did turn up in my research; variables for components like velocity and gravity that move the player also move enemies. One particular practice that I noted was the use of a technique used for instances of many enemies being on screen at once called spatial partitioning that optimizes the collision detection of each object. The presence of a practice like this defied my expectations; I thought game developers would prefer to avoid having that many enemies on screen in the first place. The fact that game developers in &lt;canvas&gt; have adopted spatial partitioning to facilitate having a lot of enemies on screen may mean that a high quantity of enemies isn’t seen as the bad practice I see it as.
+
+<br><br>Click <a href="index.html#d">here</a> to return to the home page.</p>
+</body>
 </html>
