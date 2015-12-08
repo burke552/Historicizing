@@ -9,8 +9,8 @@ var canvas = document.getElementById("a");
     var bgReady = false;
     var bgImage = new Image();
     bgImage.onload = function (){
-      bgReady = true;};
-      bgImage.src = "background.jpg";
+      bgReady = true;
+      bgImage.src = "background.png";};
       var render = function(){
         if(bgReady){
           ctx.drawImage(bgImage, 0, 0);}
