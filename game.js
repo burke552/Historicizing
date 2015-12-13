@@ -9,20 +9,44 @@ var canvas = document.getElementById("a");
     var bgReady = false;
     var bgImage = new Image();
     bgImage.onload = function (){
-      bgReady = true;
-      bgImage.src = "background.png";};
+      bgReady = true;};
+      bgImage.src = "Assets/background.png";
+
+    var heroReady = false;
+    var heroImage = new Image();
+    heroImage.onload = function (){
+      heroReady = true;};
+      heroImage.src = "Assets/Character.png";
+
+    var heroBReady = false;
+    var heroImageB = new Image();
+    heroImageB.onload = function (){
+        heroBReady = true;};
+        heroImageB.src = "Assets/BCharacter.png";
+
       var render = function(){
-        if(bgReady){
+        if (bgReady){
           ctx.drawImage(bgImage, 0, 0);}
-      }
+        if (heroReady){
+            ctx.drawImage(heroImage, player.x, player.y);}
+        };
+
+      var renderB = function(){
+        if (bgReady){
+          ctx.drawImage(bgImage, 0, 0);}
+        if (heroBReady){
+          ctx.drawImage(heroImageB, player.x, player.y);}
+        };
+
 
     width = 640;
     height = 480;
     player = {
       x : 35,
-      y : height - 15,
-      width : 14,
-      height : 15,
+      y : height - 30,
+      width : 28,
+      height : 30,
+      faceLeft: false,
       speed: 7,
       velX: 0,
       velY: 0,
@@ -38,23 +62,25 @@ canvas.height = height;
 function update(){
   // check keys
     if (keys[38]) {
-        // up arrow or space
+        // up arrow
       if(!player.jumping){
        player.jumping = true;
-       player.velY = -player.speed*1.33;}}
+       player.velY = -player.speed*1.14;}}
 
        if (player.jumping && !player.doubleJump){
-        if (keys[32]) {
+        if (keys[32]) { // space
           player.doubleJump = true;
-          player.velY = -player.speed*1.17;}}
+          player.velY = -player.speed*0.87;}}
 
     if (keys[39]) {
         // right arrow
+        player.faceLeft = false;
         if (player.velX < player.speed) {
             player.velX++;}
     }
     if (keys[37]) {
         // left arrow
+        player.faceLeft = true;
         if (player.velX > -player.speed) {
             player.velX--;}
     }
@@ -80,11 +106,14 @@ function update(){
     else if (player.y <= 0) {
         player.y = 0;
     }
-    ctx.clearRect(0,0,width,height);
-    ctx.fillStyle = "red";
-    ctx.fillRect(player.x, player.y, player.width, player.height)
+
 
   requestAnimationFrame(update);
+
+    if (player.faceLeft)
+       renderB();
+    else render();
+
 }
 
 document.body.addEventListener("keydown", function(e) {
@@ -97,4 +126,5 @@ document.body.addEventListener("keyup", function(e) {
 
 window.addEventListener("load",function(){
     update();
+
 });
