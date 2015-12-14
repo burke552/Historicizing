@@ -42,10 +42,11 @@ var canvas = document.getElementById("a");
     width = 640;
     height = 480;
     player = {
-      x : 35,
-      y : height - 30,
+
       width : 28,
       height : 30,
+      x : 35,
+      y : height - 30,
       faceLeft: false,
       speed: 7,
       velX: 0,
