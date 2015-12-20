@@ -21,22 +21,35 @@ var canvas = document.getElementById("a");
     var heroBReady = false;
     var heroImageB = new Image();
     heroImageB.onload = function (){
-        heroBReady = true;};
-        heroImageB.src = "Assets/BCharacter.png";
+      heroBReady = true;};
+      heroImageB.src = "Assets/BCharacter.png";
+
+    var enemyReady = false;
+    var enemyImage = new Image();
+    enemyImage.onload = function (){
+      enemyReady = true;};
+      enemyImage.src = "Assets/ECharacter.png";
+
+    var enemyBReady = false;
+    var enemyImageB = new Image();
+    enemyImageB.onload = function (){
+      enemyBReady = true;};
+      enemyImageB.src = "Assets/BECharacter.png";
 
       var render = function(){
         if (bgReady){
           ctx.drawImage(bgImage, 0, 0);}
-        if (heroReady){
-            ctx.drawImage(heroImage, player.x, player.y);}
-        };
-
-      var renderB = function(){
-        if (bgReady){
-          ctx.drawImage(bgImage, 0, 0);}
-        if (heroBReady){
-          ctx.drawImage(heroImageB, player.x, player.y);}
-        };
+        if (!player.faceLeft){
+          if (heroReady){
+            ctx.drawImage(heroImage, player.x, player.y);}}
+        else if (heroBReady){
+              ctx.drawImage(heroImageB, player.x, player.y);}
+        if (!enemy.faceLeft){
+          if (enemyReady){
+              ctx.drawImage(enemyImage, enemy.x, enemy.y);}}
+        else if (enemyBReady){
+              ctx.drawImage(enemyImageB, enemy.x, enemy.y);}
+              };
 
 
     width = 640;
@@ -52,7 +65,18 @@ var canvas = document.getElementById("a");
       velX: 0,
       velY: 0,
       jumping: false,
-      doubleJump: false},
+      doubleJump: false,
+      defeat: false},
+
+    enemy = {
+
+      width : 44,
+      height : 32,
+      x : 355,
+      y : height - 32,
+      faceLeft: false,
+      speed: 3.85},
+
     keys = [],
     friction = 0.78,
     gravity = 0.32;
@@ -93,10 +117,22 @@ function update(){
     player.x += player.velX;
     player.y += player.velY;
 
+    if (enemy.faceLeft)
+      enemy.x -= enemy.speed;
+      else enemy.x += enemy.speed;
+
     if (player.x >= width-player.width) {
         player.x = width-player.width;
     } else if (player.x <= 0) {
         player.x = 0;
+    }
+
+    if (enemy.x >= width-enemy.width) {
+        enemy.x = width-enemy.width;
+        enemy.faceLeft = true;
+    } else if (enemy.x <= 0) {
+        enemy.x = 0;
+        enemy.faceLeft = false;
     }
 
     if(player.y >= height-player.height){
@@ -108,12 +144,9 @@ function update(){
         player.y = 0;
     }
 
-
   requestAnimationFrame(update);
 
-    if (player.faceLeft)
-       renderB();
-    else render();
+    render();
 
 }
 
